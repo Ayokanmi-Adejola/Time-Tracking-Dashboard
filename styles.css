@@ -1,0 +1,261 @@
+:root {
+  /* Primary Colors */
+  --purple-600: hsl(246, 80%, 60%);
+  --orange-300: hsl(15, 100%, 70%);    /* work */
+  --blue-300: hsl(195, 74%, 62%);      /* play */
+  --pink-400: hsl(348, 100%, 68%);     /* study */
+  --green-400: hsl(145, 58%, 55%);     /* exercise */
+  --purple-700: hsl(264, 64%, 52%);    /* social */
+  --yellow-300: hsl(43, 84%, 65%);     /* self care */
+
+  /* Neutral Colors */
+  --navy-950: hsl(226, 43%, 10%);
+  --navy-900: hsl(235, 46%, 20%);
+  --purple-500: hsl(235, 45%, 61%);
+  --navy-200: hsl(236, 100%, 87%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  background-color: var(--navy-950);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.dashboard {
+  max-width: 1110px;
+  width: 100%;
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Profile Card Styles */
+.profile-card {
+  background-color: var(--navy-900);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.profile-info {
+  background-color: var(--purple-600);
+  padding: 2rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-image {
+  width: 70px;
+  height: 70px;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.report-for {
+  color: var(--navy-200);
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.time-period-selector {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.time-btn {
+  background: none;
+  border: none;
+  color: var(--purple-500);
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.time-btn:hover {
+  color: white;
+}
+
+.time-btn.active {
+  color: white;
+}
+
+/* Activity Card Styles */
+.activity-card {
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.activity-card-bg {
+  height: 45px;
+  position: relative;
+  overflow: hidden;
+}
+
+.activity-card-bg img {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+}
+
+.activity-card-content {
+  background-color: var(--navy-900);
+  padding: 1.5rem;
+  border-radius: 15px;
+  position: relative;
+  top: -15px;
+  transition: background-color 0.3s;
+}
+
+.activity-card-content:hover {
+  background-color: var(--purple-500);
+  cursor: pointer;
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.activity-title {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.ellipsis {
+  cursor: pointer;
+}
+
+.activity-time {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.activity-previous {
+  color: var(--navy-200);
+  font-size: 0.9rem;
+}
+
+/* Color variations for activity cards */
+.activity-card.work .activity-card-bg {
+  background-color: var(--orange-300);
+}
+
+.activity-card.play .activity-card-bg {
+  background-color: var(--blue-300);
+}
+
+.activity-card.study .activity-card-bg {
+  background-color: var(--pink-400);
+}
+
+.activity-card.exercise .activity-card-bg {
+  background-color: var(--green-400);
+}
+
+.activity-card.social .activity-card-bg {
+  background-color: var(--purple-700);
+}
+
+.activity-card.self-care .activity-card-bg {
+  background-color: var(--yellow-300);
+}
+
+/* Footer */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--navy-200);
+}
+
+.attribution a {
+  color: var(--purple-600);
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .dashboard {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .profile-card {
+    grid-row: span 2;
+  }
+
+  .profile-info {
+    padding: 2rem 2rem 4rem;
+  }
+
+  .profile-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-name {
+    font-size: 2.5rem;
+  }
+
+  .time-period-selector {
+    padding: 2rem;
+  }
+
+  .activity-cards {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-info {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .time-period-selector {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .activity-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .activity-time {
+    font-size: 2rem;
+  }
+}
