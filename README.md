@@ -14,6 +14,10 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Switch between viewing Daily, Weekly, and Monthly stats
 
+| Desktop | Mobile |
+| ------- | ------ |
+|<img width="1440" height="1024" alt="image" src="https://github.com/user-attachments/assets/8df5c2a2-eac9-4915-b704-cfcd5bce5a92" />|<img width="375" height="1469" alt="image" src="https://github.com/user-attachments/assets/8bf63030-269e-4bdf-b3a0-67725c954513" />|
+
 ## My process
 
 ### Built with
